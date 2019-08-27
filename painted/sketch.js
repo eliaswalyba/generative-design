@@ -1,7 +1,7 @@
 let picture;
 
 function setup() {
-  let canvas = createCanvas(775, 940);
+  let canvas = createCanvas(775, 930);
   canvas.parent('sketch-div');
   picture = loadImage("picture.jpg");
   imageMode(CENTER);
@@ -10,18 +10,14 @@ function setup() {
 }
 
 function draw() { 
-    let i = 0;
-    while (i <= 15) {
-        paint();
-        paint();
-        i = i + 1;
-    }
+    paint();
 }
 
 function paint() {
     const x = int(random(picture.width));
     const y = int(random(picture.height));
-    const size = random(5, 6);
-    fill(picture.get(x, y));
-    ellipse(x, y, size, size);
+    const s = random(5, 6);
+    const c = picture.get(x, y)
+    fill(c);
+    ellipse(x, y, s, s);
 }
